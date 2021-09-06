@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  margin:0;
+  padding:0;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:  60px 1fr auto;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* Initially each element has its own row for small screens */
+  grid-template-areas: "hd" "nav" "main" "ft";
+  min-height: 100vh;
+  /*border: 2px solid yellow;*/
+  
+}
+
+.deals{  
+  flex: 5;
+  grid-area: main;  
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border: 2px solid;
+  flex-wrap: wrap;
+  height: calc(100vh - 100px);
+  
+}
+
+/* add css for nested grid here 
+.nestedGrid{
+  display: grid;
+  /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  grid-template-columns:1fr 1fr 1fr 1fr 1fr;  
+  grid-gap: 1rem;
+}
+.nestedGrid > *{
+  border: 2px solid aquamarine;
+}
+*/
+#one{
+  display:grid;
+}
+.box2{
+  width: 250px;
+  height: 500px;
+  border: 1px solid red;
+  background: #F8FA9D;
+  margin:10px;
+}
+
+.header{
+  /* row start/column start/ row end/ column end */
+  grid-area:hd;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.header>p{
+  text-align: center;
+}
+
+.nav{
+  /* row start/column start/ row end/ column end */
+  grid-area:nav;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+
+.footer{
+  grid-area: ft;   
+  display: flex;
+  flex-direction: column;   
+  text-align: center;  
+}
+
+article {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+/*.deals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}*/
+
+.sale-item {
+  display: flex;
+  flex-flow: column;
+  border:  1px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  height: calc(90vh - 100px);
+}
+
+.sale-item > img {
+  order: -1;
+  align-self: center;
+  width: 100%;
+}
+
+.sale-item > figure {
+  order: -1;
+  align-self: center;
+  width: 100%;  
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  font-style: italic;
+  font-size: 10px;
+}
+
+.sale-item > figure>img {  
+  width: 100%;
+}
+
+.sale-item > button {
+  margin-top: auto; 
+  background: teal;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+}
+
+
+@media(min-width:900px){
+  .container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  60px 1fr auto;
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* Initially each element has its own row for small screens */
+    grid-template-areas: "hd nav ""main main""ft ft";
+    border: 2px solid yellow;
+    min-height: 100vh;
+  }
+}
+
